@@ -9,14 +9,10 @@ you can also output nice looking message
 it's a little dumb and this is why it's so cool
 
 
-
-ps: sorry if i broke Internet with this
-
 ### Setup ###
 
-to get started with NSS-Console! Simply download a [prebuilt build](https://github.com/pixijs/pixi.js/wiki/FAQs#where-can-i-get-a-build)!
 
-Alternatively, NSS-Console can be installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or simply using a content delivery network (CDN) URL to embed PixiJS directly on your HTML page.
+Alternatively, NSS-Console can be installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or simply using a content delivery network (CDN) URL to embed NSS-Console directly on your HTML page.
 
 #### NPM Install
 
@@ -38,7 +34,7 @@ Console.message('YO')
 #### CDN Install (via cdnjs)
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nss-console/1.0.0/nss-console.min.js"></script>
 ```
 
 ### Current features ###

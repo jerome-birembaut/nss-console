@@ -1,6 +1,6 @@
 {
   "name": "nss-console",
-  "version": "0.0.8",
+  "version": "1.0.1",
   "description": "Your chrome console is now super cool",
   "main": "dist/nss-console.js",
   "scripts": {

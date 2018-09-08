@@ -1,6 +1,6 @@
 /*!
- * nss-console - v0.0.8
- * Compiled Sat, 08 Sep 2018 15:35:57 UTC
+ * nss-console - v1.0.1
+ * Compiled Sat, 08 Sep 2018 16:25:55 UTC
  *
  * nss-console is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
