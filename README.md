@@ -58,6 +58,7 @@ NSS.Console.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_
   })
 }
 ```
+![NSS-Console demo](https://raw.githubusercontent.com/jerome-birembaut/nss-console/master/assets/demo0.jpg)
 
 ### License ###
 
