@@ -31,7 +31,7 @@ import { Console } from 'nss-console'
 Console.message('YO')
 ```
 
-#### CDN Install (via cdnjs)
+#### CDN Install (via cdnjs) ( we need a lot of stars to do this guys )
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nss-console/1.0.1/nss-console.min.js"></script>
