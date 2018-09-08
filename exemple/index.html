@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NSSConsole Yeahhh!</title>
+    <script async src="../dist/nss-console.js"></script>
+</head>
+<body onload="etBim()">
+
+<script>
+  var etBim = function() {
+    NSS.Console.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A', 0.5).then(response => {
+      NSS.Console.message('Développé par l\'équipe Not-So-Stupid !')
+        NSS.Console.message('http://not-so-stupid.com')
+        NSS.Console.message('contact@not-so-stupid.com')
+        let l = 10
+        while (l--) {
+          NSS.Console.message('YO ' + l)
+        }
+      })
+  }
+  if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+    document.body.textContent = "Yo, open your console.";
+  } else {
+    document.body.textContent = "You need to use chrome to see magic";
+  }
+</script>
+</body>
+</html>
