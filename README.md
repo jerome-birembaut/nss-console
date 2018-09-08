@@ -34,7 +34,7 @@ Console.message('YO')
 #### CDN Install (via cdnjs)
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/nss-console/1.0.0/nss-console.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nss-console/1.0.1/nss-console.min.js"></script>
 ```
 
 ### Current features ###
