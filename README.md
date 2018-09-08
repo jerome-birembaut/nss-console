@@ -1,3 +1,4 @@
+![NSS-Console demo](https://raw.githubusercontent.com/jerome-birembaut/nss-console/master/assets/demo0.jpg)
 # NSS-Console
 your chrome console is now super cool
 =============
