@@ -1,0 +1,57 @@
+{
+  "name": "nss-console",
+  "version": "0.0.3",
+  "description": "Your chrome console is now super cool",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint scripts src test --max-warnings 0",
+    "lintfix": "npm run lint --fix",
+    "dist": "pixify -d dist -n PIXI -o nss-console -t babelify",
+    "build": "npm run dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerome-birembaut/nss-console.git"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "cool"
+  ],
+  "author": "jerome birembaut @Seraf_NSS",
+  "files": [
+    "dist/nss-console.js",
+    "dist/nss-console.min.js.map",
+    "dist/nss-console.min.js",
+    "dist/nss-console.js.map",
+    "package.json",
+    "README.md"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jerome-birembaut/nss-console/issues"
+  },
+  "homepage": "https://github.com/jerome-birembaut/nss-console#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-static-fs": "^1.1.0",
+    "babel-plugin-version-inline": "^1.0.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "del": "^2.2.0",
+    "eslint": "^3.5.0",
+    "floss": "^2.0.1",
+    "js-md5": "^0.4.1",
+    "jsdoc": "3.4.3",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "parallelshell": "^2.0.0",
+    "pixify": "^1.7.0",
+    "rimraf": "^2.5.3",
+    "watch": "^0.19.1"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  }
+}
