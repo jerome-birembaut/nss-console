@@ -1,12 +1,12 @@
 {
   "name": "nss-console",
-  "version": "0.0.3",
+  "version": "0.0.8",
   "description": "Your chrome console is now super cool",
-  "main": "index.js",
+  "main": "dist/nss-console.js",
   "scripts": {
     "lint": "eslint scripts src test --max-warnings 0",
     "lintfix": "npm run lint --fix",
-    "dist": "pixify -d dist -n PIXI -o nss-console -t babelify",
+    "dist": "pixify -d dist -n NSS -o nss-console -t babelify",
     "build": "npm run dist"
   },
   "repository": {
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "babel-plugin-syntax-class-properties": "^6.13.0",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "browserify": "^16.2.2"
   }
 }
