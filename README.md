@@ -15,7 +15,7 @@ it's a little dumb and this is why it's so cool
 ### Setup ###
 
 
-Alternatively, NSS-Console can be installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or simply using a content delivery network (CDN) URL to embed NSS-Console directly on your HTML page.
+NSS-Console can be installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or simply using a content delivery network (CDN) URL to embed NSS-Console directly on your HTML page.
 
 #### NPM Install
 
