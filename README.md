@@ -1,4 +1,5 @@
-![NSS-Console demo](https://raw.githubusercontent.com/jerome-birembaut/nss-console/master/assets/demo0.jpg)
+
+[![npm version](https://badge.fury.io/js/nss-console.svg)](https://badge.fury.io/js/nss-console)
 # NSS-Console
 your chrome console is now super cool
 =============
@@ -9,6 +10,7 @@ you can also output nice looking message
 
 it's a little dumb and this is why it's so cool
 
+![NSS-Console demo](https://raw.githubusercontent.com/jerome-birembaut/nss-console/master/assets/demo0.jpg)
 
 ### Setup ###
 
