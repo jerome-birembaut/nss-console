@@ -1,21 +1,24 @@
 {
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
-  },
-  "globals": {
-    "global": false,
-    "__VERSION__": false
-  },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
+  "root": true,
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb"
+    ],
+    "env": {
+      "es6": true,
+      "browser": true
     },
-    "sourceType": "module"
-  },
-  "rules": {
-
-  }
+    "settings": {
+      "import/resolver": {
+        "babel-module": {}
+      }
+    },
+    "globals": {
+      "__VERSION__": false
+    },
+    "rules": {
+      "no-console": "off",
+      "no-param-reassign": "off"
+    }
 }
+
