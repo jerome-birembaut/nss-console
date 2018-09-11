@@ -25,13 +25,8 @@ npm install nss-console
 The correct way to import NSS-Console is:
 
 ```js
-import * as NSS from 'nss-console'
-NSS.Console.message('YO')
-```
-or
-```js
-import { Console } from 'nss-console'
-Console.message('YO')
+import NSSConsole from 'nss-console'
+NSSConsole.message('YO')
 ```
 
 #### CDN Install (via cdnjs) ( not yet available, we need a lot of stars to do this guys )
@@ -50,14 +45,14 @@ Console.message('YO')
 
 ```js
 // output a message
-NSS.Console.message('Hello')
+NSSConsole.message('Hello')
 // output an image
-NSS.Console.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A')
+NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A')
 // output an image and put a messages just below
-NSS.Console.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A', 0.5).then(response => {
-    NSS.Console.message('Développé par l\'équipe Not-So-Stupid !')
-    NSS.Console.message('http://not-so-stupid.com')
-    NSS.Console.message('contact@not-so-stupid.com')
+NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A', 0.5).then(response => {
+    NSSConsole.message('Développé par l\'équipe Not-So-Stupid !')
+    NSSConsole.message('http://not-so-stupid.com')
+    NSSConsole.message('contact@not-so-stupid.com')
   })
 }
 ```
@@ -67,8 +62,8 @@ NSS.Console.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_
 
 #### BUILD API
 
-```npm install
-npm prune```
+```npm ci
+npm run build```
 
 ### License ###
 
