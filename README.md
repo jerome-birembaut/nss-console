@@ -49,7 +49,7 @@ NSSConsole.message('Hello')
 // output an image
 NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A')
 // output an image and put a messages just below
-NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A', 0.5).then(response => {
+NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_149142151763715_7577518_n.jpg?_nc_cat=0&oh=73843ee73938ed97dc52fc91ae4fdcd8&oe=5C3B257A', 0.5).then(() => {
     NSSConsole.message('Développé par l\'équipe Not-So-Stupid !')
     NSSConsole.message('http://not-so-stupid.com')
     NSSConsole.message('contact@not-so-stupid.com')
