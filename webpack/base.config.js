@@ -5,8 +5,8 @@ module.exports = {
   target: 'web',
   entry: ['./src/main.js'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: `nss-console${process.env.NODE_ENV === 'production' ? '.min' : ''}.js`,
+    path: path.resolve(`${__dirname}/../`, 'dist'),
+    filename: `nss-console.common${process.env.NODE_ENV === 'production' ? '.min' : ''}.js`,
     library: 'NSSConsole',
   },
   devtool: 'source-map',
