@@ -33,7 +33,7 @@ Using common file:
 ```js
 <script async src="../dist/nss-console.common.js"></script>
 ```
-#### Lasted Release can be downloaded here
+#### Latest Release can be downloaded here
 
 ```html
 https://github.com/jerome-birembaut/nss-console/releases/tag/1.1.6
