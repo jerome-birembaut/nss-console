@@ -29,10 +29,14 @@ import NSSConsole from 'nss-console'
 NSSConsole.message('YO')
 ```
 
-#### CDN Install (via cdnjs) ( not yet available, we need a lot of stars to do this guys )
+Using common file:
+```js
+<script async src="../dist/nss-console.common.js"></script>
+```
+#### Lasted Release can be downloaded here
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/nss-console/1.0.1/nss-console.min.js"></script>
+https://github.com/jerome-birembaut/nss-console/releases/tag/1.1.6
 ```
 
 ### Current features ###
@@ -63,7 +67,7 @@ NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_1
 #### BUILD API
 
 ```
-npm ci
+npm install
 npm run build
 ```
 
