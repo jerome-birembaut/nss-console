@@ -9,6 +9,7 @@ module.exports = {
     filename: 'nss-console.js',
     library: 'NSSConsole',
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
