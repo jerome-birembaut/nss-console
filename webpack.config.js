@@ -1,15 +1,15 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: process.env.NODE_ENV || 'development',
   target: 'web',
   entry: ['./src/main.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'nss-console.js',
+    filename: `nss-console${process.env.NODE_ENV === 'production' ? '.min' : ''}.js`,
     library: 'NSSConsole',
   },
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -24,7 +24,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-  ],
 };

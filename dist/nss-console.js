@@ -1,1 +1,223 @@
-var NSSConsole=function(n){var c={};function s(Q){if(c[Q])return c[Q].exports;var e=c[Q]={i:Q,l:!1,exports:{}};return n[Q].call(e.exports,e,e.exports,s),e.l=!0,e.exports}return s.m=n,s.c=c,s.d=function(n,c,Q){s.o(n,c)||Object.defineProperty(n,c,{enumerable:!0,get:Q})},s.r=function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(n,"__esModule",{value:!0})},s.t=function(n,c){if(1&c&&(n=s(n)),8&c)return n;if(4&c&&"object"==typeof n&&n&&n.__esModule)return n;var Q=Object.create(null);if(s.r(Q),Object.defineProperty(Q,"default",{enumerable:!0,value:n}),2&c&&"string"!=typeof n)for(var e in n)s.d(Q,e,function(c){return n[c]}.bind(null,e));return Q},s.n=function(n){var c=n&&n.__esModule?function(){return n.default}:function(){return n};return s.d(c,"a",c),c},s.o=function(n,c){return Object.prototype.hasOwnProperty.call(n,c)},s.p="",s(s.s=0)}([function(n,c,s){n.exports=s(1)},function(module,exports,__webpack_require__){eval("var NSSConsole = __webpack_require__(2);\n\nmodule.exports = NSSConsole.default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9OU1NDb25zb2xlLy4vc3JjL21haW4uanM/NTZkNyJdLCJuYW1lcyI6WyJOU1NDb25zb2xlIiwibW9kdWxlIiwiZXhwb3J0cyIsImRlZmF1bHQiXSwibWFwcGluZ3MiOiJBQUFBLElBQU1BLFVBQVUsR0FBRyxtQkFBTyxDQUFDLENBQUQsQ0FBMUI7O0FBRUFDLE1BQU0sQ0FBQ0MsT0FBUCxHQUFpQkYsVUFBVSxDQUFDRyxPQUE1QiIsImZpbGUiOiIxLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgTlNTQ29uc29sZSA9IHJlcXVpcmUoJy4vaW5kZXgnKTtcclxuXHJcbm1vZHVsZS5leHBvcnRzID0gTlNTQ29uc29sZS5kZWZhdWx0O1xyXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///1\n")},function(module,__webpack_exports__,__webpack_require__){"use strict";eval('__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NSSConsole; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar NSSConsole =\n/*#__PURE__*/\nfunction () {\n  function NSSConsole() {\n    _classCallCheck(this, NSSConsole);\n  }\n\n  _createClass(NSSConsole, null, [{\n    key: "getBox",\n    value: function getBox(width, height) {\n      return {\n        string: \'+\',\n        style: "font-size: 1px; padding: ".concat(Math.floor(height / 2), "px ").concat(Math.floor(width / 2), "px; line-height: ").concat(height, "px;")\n      };\n    }\n  }, {\n    key: "message",\n    value: function message(_message) {\n      var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;\n      var invertColor = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;\n      _message = _message.split(\'://\').join(\': //\');\n      var colorBase = \'#030307\';\n\n      if (color === undefined) {\n        color = NSSConsole.colors[NSSConsole.colorsCurrentIndex];\n        NSSConsole.colorsCurrentIndex += 1;\n\n        if (NSSConsole.colorsCurrentIndex >= NSSConsole.colors.length) {\n          NSSConsole.colorsCurrentIndex = 0;\n        }\n      }\n\n      if (invertColor) {\n        var temp = color;\n        color = colorBase;\n        colorBase = temp;\n      }\n\n      if (window.navigator.userAgent.toLowerCase().indexOf(\'chrome\') > -1) {\n        var _console;\n\n        var args = ["%c %c ".concat(_message, " %c %c"), "padding: 1px;border-radius: 3px 0 0 3px;background: ".concat(color), "padding: 1px; color: ".concat(color, "; background: ").concat(colorBase, ";"), "padding: 1px;border-radius: 0 3px 3px 0;background: ".concat(color), "background: ".concat(colorBase, ";")];\n\n        (_console = console).log.apply(_console, args);\n      } else {\n        console.log(_message);\n      }\n    }\n  }, {\n    key: "image",\n    value: function image(url) {\n      var scale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;\n      var silentFail = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;\n      return new Promise(function (resolve) {\n        if (navigator.userAgent.toLowerCase().indexOf(\'chrome\') > -1) {\n          var img = new Image();\n\n          img.onload = function () {\n            var dim = NSSConsole.getBox(img.width * scale, img.height / 2 * scale);\n            console.log("%c".concat(dim.string), "".concat(dim.style, "background: url(").concat(url, ") no-repeat; background-size: ").concat(img.width * scale, "px ").concat(img.height * scale, "px; color: transparent;"));\n            resolve();\n          };\n\n          img.src = url;\n        } else {\n          if (!silentFail) {\n            console.log("failed to show this image: ".concat(url));\n          }\n\n          resolve();\n        }\n      });\n    }\n  }, {\n    key: "log",\n    value: function log() {\n      var _console2;\n\n      (_console2 = console).log.apply(_console2, arguments);\n    }\n  }]);\n\n  return NSSConsole;\n}();\n\nNSSConsole.colors = [\'#b5cdf1\', \'#f8674f\', \'#a7cd79\', \'#c9a0dc\', \'#ffef00\', \'#fb9912\'];\nNSSConsole.colorsCurrentIndex = 0;\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9OU1NDb25zb2xlLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwibmFtZXMiOlsiTlNTQ29uc29sZSIsIndpZHRoIiwiaGVpZ2h0Iiwic3RyaW5nIiwic3R5bGUiLCJNYXRoIiwiZmxvb3IiLCJtZXNzYWdlIiwiY29sb3IiLCJ1bmRlZmluZWQiLCJpbnZlcnRDb2xvciIsInNwbGl0Iiwiam9pbiIsImNvbG9yQmFzZSIsImNvbG9ycyIsImNvbG9yc0N1cnJlbnRJbmRleCIsImxlbmd0aCIsInRlbXAiLCJ3aW5kb3ciLCJuYXZpZ2F0b3IiLCJ1c2VyQWdlbnQiLCJ0b0xvd2VyQ2FzZSIsImluZGV4T2YiLCJhcmdzIiwiY29uc29sZSIsImxvZyIsInVybCIsInNjYWxlIiwic2lsZW50RmFpbCIsIlByb21pc2UiLCJyZXNvbHZlIiwiaW1nIiwiSW1hZ2UiLCJvbmxvYWQiLCJkaW0iLCJnZXRCb3giLCJzcmMiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0lBQXFCQSxVOzs7Ozs7Ozs7MkJBS0xDLEssRUFBT0MsTSxFQUFRO0FBQzNCLGFBQU87QUFDTEMsY0FBTSxFQUFFLEdBREg7QUFFTEMsYUFBSyxxQ0FBOEJDLElBQUksQ0FBQ0MsS0FBTCxDQUFXSixNQUFNLEdBQUcsQ0FBcEIsQ0FBOUIsZ0JBQTBERyxJQUFJLENBQUNDLEtBQUwsQ0FBV0wsS0FBSyxHQUFHLENBQW5CLENBQTFELDhCQUFtR0MsTUFBbkc7QUFGQSxPQUFQO0FBSUQ7Ozs0QkFFY0ssUSxFQUFpRDtBQUFBLFVBQXhDQyxLQUF3Qyx1RUFBaENDLFNBQWdDO0FBQUEsVUFBckJDLFdBQXFCLHVFQUFQLEtBQU87QUFDOURILGNBQU8sR0FBR0EsUUFBTyxDQUFDSSxLQUFSLENBQWMsS0FBZCxFQUFxQkMsSUFBckIsQ0FBMEIsTUFBMUIsQ0FBVjtBQUNBLFVBQUlDLFNBQVMsR0FBRyxTQUFoQjs7QUFDQSxVQUFJTCxLQUFLLEtBQUtDLFNBQWQsRUFBeUI7QUFDdkJELGFBQUssR0FBR1IsVUFBVSxDQUFDYyxNQUFYLENBQWtCZCxVQUFVLENBQUNlLGtCQUE3QixDQUFSO0FBQ0FmLGtCQUFVLENBQUNlLGtCQUFYLElBQWlDLENBQWpDOztBQUNBLFlBQUlmLFVBQVUsQ0FBQ2Usa0JBQVgsSUFBaUNmLFVBQVUsQ0FBQ2MsTUFBWCxDQUFrQkUsTUFBdkQsRUFBK0Q7QUFDN0RoQixvQkFBVSxDQUFDZSxrQkFBWCxHQUFnQyxDQUFoQztBQUNEO0FBQ0Y7O0FBQ0QsVUFBSUwsV0FBSixFQUFpQjtBQUNmLFlBQU1PLElBQUksR0FBR1QsS0FBYjtBQUNBQSxhQUFLLEdBQUdLLFNBQVI7QUFDQUEsaUJBQVMsR0FBR0ksSUFBWjtBQUNEOztBQUNELFVBQUlDLE1BQU0sQ0FBQ0MsU0FBUCxDQUFpQkMsU0FBakIsQ0FBMkJDLFdBQTNCLEdBQXlDQyxPQUF6QyxDQUFpRCxRQUFqRCxJQUE2RCxDQUFDLENBQWxFLEVBQXFFO0FBQUE7O0FBQ25FLFlBQU1DLElBQUksR0FBRyxpQkFDRmhCLFFBREUsMkVBRTRDQyxLQUY1QyxrQ0FHYUEsS0FIYiwyQkFHbUNLLFNBSG5DLHNFQUk0Q0wsS0FKNUMseUJBS0lLLFNBTEosT0FBYjs7QUFPQSxvQkFBQVcsT0FBTyxFQUFDQyxHQUFSLGlCQUFlRixJQUFmO0FBQ0QsT0FURCxNQVNPO0FBQ0xDLGVBQU8sQ0FBQ0MsR0FBUixDQUFZbEIsUUFBWjtBQUNEO0FBQ0Y7OzswQkFFWW1CLEcsRUFBbUM7QUFBQSxVQUE5QkMsS0FBOEIsdUVBQXRCLENBQXNCO0FBQUEsVUFBbkJDLFVBQW1CLHVFQUFOLElBQU07QUFDOUMsYUFBTyxJQUFJQyxPQUFKLENBQVksVUFBQ0MsT0FBRCxFQUFhO0FBQzlCLFlBQUlYLFNBQVMsQ0FBQ0MsU0FBVixDQUFvQkMsV0FBcEIsR0FBa0NDLE9BQWxDLENBQTBDLFFBQTFDLElBQXNELENBQUMsQ0FBM0QsRUFBOEQ7QUFDNUQsY0FBTVMsR0FBRyxHQUFHLElBQUlDLEtBQUosRUFBWjs7QUFDQUQsYUFBRyxDQUFDRSxNQUFKLEdBQWEsWUFBTTtBQUNqQixnQkFBTUMsR0FBRyxHQUFHbEMsVUFBVSxDQUFDbUMsTUFBWCxDQUFrQkosR0FBRyxDQUFDOUIsS0FBSixHQUFZMEIsS0FBOUIsRUFBcUNJLEdBQUcsQ0FBQzdCLE1BQUosR0FBYSxDQUFiLEdBQWlCeUIsS0FBdEQsQ0FBWjtBQUNBSCxtQkFBTyxDQUFDQyxHQUFSLGFBQWlCUyxHQUFHLENBQUMvQixNQUFyQixhQUFrQytCLEdBQUcsQ0FBQzlCLEtBQXRDLDZCQUE4RHNCLEdBQTlELDJDQUFrR0ssR0FBRyxDQUFDOUIsS0FBSixHQUFZMEIsS0FBOUcsZ0JBQTBISSxHQUFHLENBQUM3QixNQUFKLEdBQWF5QixLQUF2STtBQUNBRyxtQkFBTztBQUNSLFdBSkQ7O0FBS0FDLGFBQUcsQ0FBQ0ssR0FBSixHQUFVVixHQUFWO0FBQ0QsU0FSRCxNQVFPO0FBQ0wsY0FBSSxDQUFDRSxVQUFMLEVBQWlCO0FBQ2ZKLG1CQUFPLENBQUNDLEdBQVIsc0NBQTBDQyxHQUExQztBQUNEOztBQUNESSxpQkFBTztBQUNSO0FBQ0YsT0FmTSxDQUFQO0FBZ0JEOzs7MEJBRW1CO0FBQUE7O0FBQ2xCLG1CQUFBTixPQUFPLEVBQUNDLEdBQVI7QUFDRDs7Ozs7O0FBOURrQnpCLFUsQ0FDWmMsTSxHQUFTLENBQUMsU0FBRCxFQUFZLFNBQVosRUFBdUIsU0FBdkIsRUFBa0MsU0FBbEMsRUFBNkMsU0FBN0MsRUFBd0QsU0FBeEQsQztBQURHZCxVLENBR1plLGtCLEdBQXFCLEMiLCJmaWxlIjoiMi5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IGNsYXNzIE5TU0NvbnNvbGUge1xyXG4gIHN0YXRpYyBjb2xvcnMgPSBbJyNiNWNkZjEnLCAnI2Y4Njc0ZicsICcjYTdjZDc5JywgJyNjOWEwZGMnLCAnI2ZmZWYwMCcsICcjZmI5OTEyJ107XHJcblxyXG4gIHN0YXRpYyBjb2xvcnNDdXJyZW50SW5kZXggPSAwO1xyXG5cclxuICBzdGF0aWMgZ2V0Qm94KHdpZHRoLCBoZWlnaHQpIHtcclxuICAgIHJldHVybiB7XHJcbiAgICAgIHN0cmluZzogJysnLFxyXG4gICAgICBzdHlsZTogYGZvbnQtc2l6ZTogMXB4OyBwYWRkaW5nOiAke01hdGguZmxvb3IoaGVpZ2h0IC8gMil9cHggJHtNYXRoLmZsb29yKHdpZHRoIC8gMil9cHg7IGxpbmUtaGVpZ2h0OiAke2hlaWdodH1weDtgLFxyXG4gICAgfTtcclxuICB9XHJcblxyXG4gIHN0YXRpYyBtZXNzYWdlKG1lc3NhZ2UsIGNvbG9yID0gdW5kZWZpbmVkLCBpbnZlcnRDb2xvciA9IGZhbHNlKSB7XHJcbiAgICBtZXNzYWdlID0gbWVzc2FnZS5zcGxpdCgnOi8vJykuam9pbignOiAvLycpO1xyXG4gICAgbGV0IGNvbG9yQmFzZSA9ICcjMDMwMzA3JztcclxuICAgIGlmIChjb2xvciA9PT0gdW5kZWZpbmVkKSB7XHJcbiAgICAgIGNvbG9yID0gTlNTQ29uc29sZS5jb2xvcnNbTlNTQ29uc29sZS5jb2xvcnNDdXJyZW50SW5kZXhdO1xyXG4gICAgICBOU1NDb25zb2xlLmNvbG9yc0N1cnJlbnRJbmRleCArPSAxO1xyXG4gICAgICBpZiAoTlNTQ29uc29sZS5jb2xvcnNDdXJyZW50SW5kZXggPj0gTlNTQ29uc29sZS5jb2xvcnMubGVuZ3RoKSB7XHJcbiAgICAgICAgTlNTQ29uc29sZS5jb2xvcnNDdXJyZW50SW5kZXggPSAwO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICBpZiAoaW52ZXJ0Q29sb3IpIHtcclxuICAgICAgY29uc3QgdGVtcCA9IGNvbG9yO1xyXG4gICAgICBjb2xvciA9IGNvbG9yQmFzZTtcclxuICAgICAgY29sb3JCYXNlID0gdGVtcDtcclxuICAgIH1cclxuICAgIGlmICh3aW5kb3cubmF2aWdhdG9yLnVzZXJBZ2VudC50b0xvd2VyQ2FzZSgpLmluZGV4T2YoJ2Nocm9tZScpID4gLTEpIHtcclxuICAgICAgY29uc3QgYXJncyA9IFtcclxuICAgICAgICBgJWMgJWMgJHttZXNzYWdlfSAlYyAlY2AsXHJcbiAgICAgICAgYHBhZGRpbmc6IDFweDtib3JkZXItcmFkaXVzOiAzcHggMCAwIDNweDtiYWNrZ3JvdW5kOiAke2NvbG9yfWAsXHJcbiAgICAgICAgYHBhZGRpbmc6IDFweDsgY29sb3I6ICR7Y29sb3J9OyBiYWNrZ3JvdW5kOiAke2NvbG9yQmFzZX07YCxcclxuICAgICAgICBgcGFkZGluZzogMXB4O2JvcmRlci1yYWRpdXM6IDAgM3B4IDNweCAwO2JhY2tncm91bmQ6ICR7Y29sb3J9YCxcclxuICAgICAgICBgYmFja2dyb3VuZDogJHtjb2xvckJhc2V9O2AsXHJcbiAgICAgIF07XHJcbiAgICAgIGNvbnNvbGUubG9nKC4uLmFyZ3MpO1xyXG4gICAgfSBlbHNlIHtcclxuICAgICAgY29uc29sZS5sb2cobWVzc2FnZSk7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICBzdGF0aWMgaW1hZ2UodXJsLCBzY2FsZSA9IDEsIHNpbGVudEZhaWwgPSB0cnVlKSB7XHJcbiAgICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUpID0+IHtcclxuICAgICAgaWYgKG5hdmlnYXRvci51c2VyQWdlbnQudG9Mb3dlckNhc2UoKS5pbmRleE9mKCdjaHJvbWUnKSA+IC0xKSB7XHJcbiAgICAgICAgY29uc3QgaW1nID0gbmV3IEltYWdlKCk7XHJcbiAgICAgICAgaW1nLm9ubG9hZCA9ICgpID0+IHtcclxuICAgICAgICAgIGNvbnN0IGRpbSA9IE5TU0NvbnNvbGUuZ2V0Qm94KGltZy53aWR0aCAqIHNjYWxlLCBpbWcuaGVpZ2h0IC8gMiAqIHNjYWxlKTtcclxuICAgICAgICAgIGNvbnNvbGUubG9nKGAlYyR7ZGltLnN0cmluZ31gLCBgJHtkaW0uc3R5bGV9YmFja2dyb3VuZDogdXJsKCR7dXJsfSkgbm8tcmVwZWF0OyBiYWNrZ3JvdW5kLXNpemU6ICR7aW1nLndpZHRoICogc2NhbGV9cHggJHsoaW1nLmhlaWdodCAqIHNjYWxlKX1weDsgY29sb3I6IHRyYW5zcGFyZW50O2ApO1xyXG4gICAgICAgICAgcmVzb2x2ZSgpO1xyXG4gICAgICAgIH07XHJcbiAgICAgICAgaW1nLnNyYyA9IHVybDtcclxuICAgICAgfSBlbHNlIHtcclxuICAgICAgICBpZiAoIXNpbGVudEZhaWwpIHtcclxuICAgICAgICAgIGNvbnNvbGUubG9nKGBmYWlsZWQgdG8gc2hvdyB0aGlzIGltYWdlOiAke3VybH1gKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgcmVzb2x2ZSgpO1xyXG4gICAgICB9XHJcbiAgICB9KTtcclxuICB9XHJcblxyXG4gIHN0YXRpYyBsb2coLi4uYXJncykge1xyXG4gICAgY29uc29sZS5sb2coLi4uYXJncyk7XHJcbiAgfVxyXG59XHJcbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///2\n')}]);
+var NSSConsole =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NSSConsole; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var NSSConsole =
+/*#__PURE__*/
+function () {
+  function NSSConsole() {
+    _classCallCheck(this, NSSConsole);
+  }
+
+  _createClass(NSSConsole, null, [{
+    key: "getBox",
+    value: function getBox(width, height) {
+      return {
+        string: '+',
+        style: "font-size: 1px; padding: ".concat(Math.floor(height / 2), "px ").concat(Math.floor(width / 2), "px; line-height: ").concat(height, "px;")
+      };
+    }
+  }, {
+    key: "message",
+    value: function message(_message) {
+      var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;
+      var invertColor = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      _message = _message.split('://').join(': //');
+      var colorBase = '#030307';
+
+      if (color === undefined) {
+        color = NSSConsole.colors[NSSConsole.colorsCurrentIndex];
+        NSSConsole.colorsCurrentIndex += 1;
+
+        if (NSSConsole.colorsCurrentIndex >= NSSConsole.colors.length) {
+          NSSConsole.colorsCurrentIndex = 0;
+        }
+      }
+
+      if (invertColor) {
+        var temp = color;
+        color = colorBase;
+        colorBase = temp;
+      }
+
+      if (window.navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+        var _console;
+
+        var args = ["%c %c ".concat(_message, " %c %c"), "padding: 1px;border-radius: 3px 0 0 3px;background: ".concat(color), "padding: 1px; color: ".concat(color, "; background: ").concat(colorBase, ";"), "padding: 1px;border-radius: 0 3px 3px 0;background: ".concat(color), "background: ".concat(colorBase, ";")];
+
+        (_console = console).log.apply(_console, args);
+      } else {
+        console.log(_message);
+      }
+    }
+  }, {
+    key: "image",
+    value: function image(url) {
+      var scale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      var silentFail = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+      return new Promise(function (resolve) {
+        if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+          var img = new Image();
+
+          img.onload = function () {
+            var dim = NSSConsole.getBox(img.width * scale, img.height / 2 * scale);
+            console.log("%c".concat(dim.string), "".concat(dim.style, "background: url(").concat(url, ") no-repeat; background-size: ").concat(img.width * scale, "px ").concat(img.height * scale, "px; color: transparent;"));
+            resolve();
+          };
+
+          img.src = url;
+        } else {
+          if (!silentFail) {
+            console.log("failed to show this image: ".concat(url));
+          }
+
+          resolve();
+        }
+      });
+    }
+  }, {
+    key: "log",
+    value: function log() {
+      var _console2;
+
+      (_console2 = console).log.apply(_console2, arguments);
+    }
+  }]);
+
+  return NSSConsole;
+}();
+
+NSSConsole.colors = ['#b5cdf1', '#f8674f', '#a7cd79', '#c9a0dc', '#ffef00', '#fb9912'];
+NSSConsole.colorsCurrentIndex = 0;
+
+
+/***/ }),
+
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var NSSConsole = __webpack_require__(/*! ./index */ "./src/index.js");
+
+module.exports = NSSConsole.default;
+
+/***/ }),
+
+/***/ 0:
+/*!***************************!*\
+  !*** multi ./src/main.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./src/main.js */"./src/main.js");
+
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=nss-console.js.map
