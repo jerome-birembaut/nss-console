@@ -33,9 +33,9 @@ export default class NSSConsole {
         `padding: 1px;border-radius: 0 3px 3px 0;background: ${color}`,
         `background: ${colorBase};`,
       ];
-      NSSConsole.log(...args);
+      console.log(...args);
     } else {
-      NSSConsole.log(message);
+      console.log(message);
     }
   }
 
@@ -44,14 +44,14 @@ export default class NSSConsole {
       if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
         const img = new Image();
         img.onload = () => {
-          const dim = NSSConsole.getBox(this.width * scale, this.height / 2 * scale);
-          NSSConsole.log(`%c${dim.string}`, `${dim.style}background: url(${url}) no-repeat; background-size: (${this.width * scale})px ${(this.height * scale)}px; color: transparent;`);
+          const dim = NSSConsole.getBox(img.width * scale, img.height / 2 * scale);
+          console.log(`%c${dim.string}`, `${dim.style}background: url(${url}) no-repeat; background-size: ${img.width * scale}px ${(img.height * scale)}px; color: transparent;`);
           resolve();
         };
         img.src = url;
       } else {
         if (!silentFail) {
-          NSSConsole.log(`failed to show this image: ${url}`);
+          console.log(`failed to show this image: ${url}`);
         }
         resolve();
       }
