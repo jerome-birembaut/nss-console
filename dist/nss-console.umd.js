@@ -96,10 +96,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/nss-console.js":
+/*!****************************!*\
+  !*** ./src/nss-console.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -204,13 +204,13 @@ NSSConsole.colorsCurrentIndex = 0;
 /***/ }),
 
 /***/ 0:
-/*!****************************!*\
-  !*** multi ./src/index.js ***!
-  \****************************/
+/*!**********************************!*\
+  !*** multi ./src/nss-console.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! ./src/nss-console.js */"./src/nss-console.js");
 
 
 /***/ })
