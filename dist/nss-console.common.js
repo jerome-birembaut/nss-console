@@ -91,6 +91,19 @@ var NSSConsole =
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var NSSConsole = __webpack_require__(/*! ./nss-console */ "./src/nss-console.js");
+
+module.exports = NSSConsole.default;
+
+/***/ }),
+
+/***/ "./src/nss-console.js":
+/*!****************************!*\
+  !*** ./src/nss-console.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -194,27 +207,14 @@ NSSConsole.colorsCurrentIndex = 0;
 
 /***/ }),
 
-/***/ "./src/main.js":
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var NSSConsole = __webpack_require__(/*! ./index */ "./src/index.js");
-
-module.exports = NSSConsole.default;
-
-/***/ }),
-
 /***/ 0:
-/*!***************************!*\
-  !*** multi ./src/main.js ***!
-  \***************************/
+/*!****************************!*\
+  !*** multi ./src/index.js ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/main.js */"./src/main.js");
+module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
 
 
 /***/ })
