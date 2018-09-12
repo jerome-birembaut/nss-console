@@ -67,7 +67,7 @@ NSSConsole.image('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/p200x200/35966_1
 #### BUILD API
 
 ```
-npm install
+npm ci
 npm run build
 ```
 
