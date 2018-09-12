@@ -8,7 +8,8 @@ With NSS-Console you can output image directy on your chrome console
 
 you can also output nice looking message
 
-it's a little dumb and this is why it's so cool
+You may think it's stupid?
+it's Not-So-Stupid!
 
 ![NSS-Console demo](https://raw.githubusercontent.com/jerome-birembaut/nss-console/master/assets/demo0.jpg)
 
